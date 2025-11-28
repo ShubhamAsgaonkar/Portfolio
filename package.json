@@ -1,0 +1,16 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "blog_data.js",
+  "scripts": {
+    "build:blogs": "node generate_blog_data.js",
+    "predeploy": "npm run build:blogs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "docx-parser": "^0.2.1"
+  }
+}
