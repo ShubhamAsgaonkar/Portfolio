@@ -190,17 +190,17 @@ metadata:
   name: shubham-asgaonkar
 spec:
   roles:
+    - Cloud Engineer
     - MLOps
     - LLMOps
-    - DevSecOps
   specialties:
-    - LLMOps
-    - Kubernetes
-    - Security
+    - GenAI & LLM Solutions
+    - Kubernetes (EKS & AKS)
+    - DevSecOps & Compliance
   deliverables:
-    - "Scalable AI Solutions"
-    - "Reliable Deployments"
-    - "End-to-End Automation"`;
+    - "Production-Ready AI Services"
+    - "Scalable Cloud Infrastructure"
+    - "End-to-End CI/CD Automation"`;
 
 const codeElement = document.getElementById('typedCode');
 

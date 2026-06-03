@@ -1,6 +1,27 @@
 const fs = require('fs');
 const path = require('path');
 const docxParser = require('docx-parser');
+const { marked } = require('marked');
+
+// Configure marked for clean output
+marked.setOptions({ gfm: true, breaks: false });
+
+// Strip markdown symbols for plain-text excerpts
+function stripMarkdown(text) {
+    return text
+        .replace(/^#{1,6}\s+/gm, '')       // headings
+        .replace(/\*\*(.+?)\*\*/g, '$1')   // bold
+        .replace(/\*(.+?)\*/g, '$1')       // italic
+        .replace(/`{1,3}[^`]*`{1,3}/g, '') // code
+        .replace(/^>\s+/gm, '')            // blockquotes
+        .replace(/^[-*+]\s+/gm, '')        // list bullets
+        .replace(/^\d+\.\s+/gm, '')        // numbered lists
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // links
+        .replace(/!\[.*?\]\(.*?\)/g, '')   // images
+        .replace(/[-]{3,}/g, '')           // horizontal rules
+        .replace(/\n{2,}/g, ' ')           // collapse newlines
+        .trim();
+}
 
 const blogsDir = path.join(__dirname, 'Blogs');
 const outputFile = path.join(__dirname, 'blog_data.js');
@@ -34,7 +55,10 @@ function generateBlogPage(blog, templateHtml) {
     let html = templateHtml.replace(/href="style.css"/g, 'href="../../style.css"')
         .replace(/src="script.js"/g, 'src="../../script.js"')
         .replace(/src="blog_data.js"/g, 'src="../../blog_data.js"')
-        .replace(/href="Shubham_Asgaonkar_Resume.pdf"/g, 'href="../../Shubham_Asgaonkar_Resume.pdf"');
+        .replace(/href="Shubham_Asgaonkar_Resume.pdf"/g, 'href="../../Shubham_Asgaonkar_Resume.pdf"')
+        .replace(/src="https:\/\/cdn\.jsdelivr\.net\/npm\/marked\/marked\.min\.js"/g, 'src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"')
+        // Fix all in-page anchor links (navbar + CTA buttons) to point back to root index
+        .replace(/href="#([^"]*)"/g, 'href="../../index.html#$1"');
 
     // Replace the main content with the blog post
     // We'll keep the navbar and footer, but replace the body content
@@ -78,8 +102,8 @@ function generateBlogPage(blog, templateHtml) {
         imageHtml = `<div class="blog-image placeholder-gradient-1" style="height: 400px; border-radius: 20px; margin-bottom: 30px;"></div>`;
     }
 
-    // Format content (simple newline to <br> for now, or <p>)
-    const formattedContent = blog.content.split('\n').map(line => `<p>${line}</p>`).join('');
+    // Render markdown to HTML using marked
+    const formattedContent = marked.parse(blog.content);
 
     const blogContentHtml = `
     <section class="section" style="padding-top: 120px; min-height: 80vh;">
@@ -139,10 +163,13 @@ async function getBlogs() {
             ? `Blogs/${encodeURIComponent(folder)}/${encodeURIComponent(imageFile)}`
             : "placeholder.jpg";
 
+        // Use plain-text excerpt for the blog card (no markdown symbols)
+        const plainExcerpt = stripMarkdown(content);
+
         const blogObj = {
             title: folder,
             date,
-            excerpt: content.substring(0, 180) + "...",
+            excerpt: plainExcerpt.substring(0, 200) + "...",
             content,
             image,
         };
