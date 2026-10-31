@@ -1,18 +1,20 @@
 Shubham
 Asgaonkar
 DevSecOps / MLOps Engineer
-Mumbai
-Model Town, Andheri West, Mumbai 400053
+Hof, Germany
+Hof, Germany
 shubham@asgaonkar.com
-9619739602
+
 LinkedIn: ttps://www.linkedin.com/in/ shubhamasgaonkar/
 DevSecOps & MLOps Engineer specializing in LLM deployment, scaling, and optimization. Experienced in building end-to-end MLOps/LLMOps
 pipelines, deploying GPU-accelerated workloads on Kubernetes, and integrating monitoring & observability solutions. Skilled in CI/CD for ML
 workflows, GPU/TPU optimization, quantization, batching, and secure model-serving. Adept at collaborating with ML research teams to operationalize
 fine-tuned and multi-agent LLM workflows.
 Professional Experience
-Associate Cloud Engineer ONETURE TECHNOLOGIES , Mumbai | September 2024 - Present
+Cloud / MLOps Engineer ONETURE TECHNOLOGIES , Mumbai | September 2024 - 4 September 2026
 Education
+M.Eng. in Software Engineering for Industrial Applications, Hof University of Applied Sciences, Hof,
+Germany | October 2026 - Present
 BSc Computer Science in (Cloud Technology & Information Security) Nagindas Khandwala College (Mumbai
 University), Mumbai | May 2021 - April 2024
 Key Skills

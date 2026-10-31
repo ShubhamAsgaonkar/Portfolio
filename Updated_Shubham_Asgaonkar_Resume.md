@@ -3,11 +3,10 @@
 - **Date of Birth:** 04/10/2003  
 - **Place of Birth:** Mumbai, India  
 - **Nationality:** Indian  
-- **Gender:** Male  
-- **Phone:** (+91) 9619739602  
+- **Gender:** Male   
 - **Email:** asgaonkarshubham70@gmail.com  
 - **LinkedIn:** https://www.linkedin.com/in/shubham-asgaonkar/  
-- **Address:** 4 Bungalows Model Town, Andheri West, Mumbai - 400055, India  
+- **Address:** Hof, Germany  
 
 ---
 
@@ -27,7 +26,7 @@ Skilled in applied cloud computing, observability, and secure, scalable infrastr
 
 ## Cloud / MLOps Engineer — Oneture Technologies
 **Mumbai, India**  
-**Dec 2025 – Present**
+**Dec 2025 – 4 Sep 2026**
 
 - Developed production-ready GenAI/LLM solutions as part of a cross-functional team building a client product from scratch.
 - Designed and implemented Python-based services for document conversion (PDF/other formats) to Markdown as backend APIs.
@@ -67,6 +66,11 @@ Skilled in applied cloud computing, observability, and secure, scalable infrastr
 ---
 
 # Education
+
+## Master of Engineering (M.Eng.) in Software Engineering for Industrial Applications
+**Hof University of Applied Sciences**  
+**Hof, Germany**  
+**Oct 2026 – Present**
 
 ## BSc Computer Science (Cloud Technology & Information Security)
 **Nagindas Khandwala College, University of Mumbai**  

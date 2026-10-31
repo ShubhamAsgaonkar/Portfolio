@@ -413,6 +413,83 @@ ul {
     color: var(--text-primary);
 }
 
+/* Education Section */
+.edu-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 24px;
+    border-left: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.edu-item {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.edu-item:last-child {
+    margin-bottom: 0;
+}
+
+.edu-item::before {
+    content: "";
+    position: absolute;
+    left: -31px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+}
+
+.edu-date {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    padding-top: 4px;
+}
+
+.edu-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+}
+
+.edu-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.edu-school {
+    display: block;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.edu-card ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #b5b5b5;
+    font-size: 0.95rem;
+}
+
+.edu-card .tags {
+    margin-top: 14px;
+}
+
+.edu-card ul li {
+    margin-bottom: 6px;
+}
+
+.exp-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
 /* Skills Section */
 .skills-grid {
     display: grid;
@@ -917,5 +994,10 @@ footer {
     .footer-content {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .edu-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
     }
 }

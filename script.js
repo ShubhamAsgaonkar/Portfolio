@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* -----------------------------
        APPLY OBSERVER TO STATIC ELEMENTS
     ------------------------------ */
-    document.querySelectorAll('.section-title, .skill-card, .project-card, .contact-wrapper')
+    document.querySelectorAll('.section-title, .skill-card, .project-card, .contact-wrapper, .edu-card')
         .forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
